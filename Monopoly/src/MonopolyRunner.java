@@ -9,6 +9,7 @@ public class MonopolyRunner {
 	
 	public void main(String[] args) {
 		welcome();
+		
 
 	}
 	

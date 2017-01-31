@@ -5,6 +5,9 @@ public class Player {
 
 	private String name;
 	private int money;
+	private int playerPosition;
+
+
 	static ArrayList<Player> players = new ArrayList<Player>();
 	
 	public String getName() {
@@ -40,6 +43,15 @@ public class Player {
 	public Player(String n, int m){
 		name = n;
 		money = m;
+	}
+	
+	public int getPlayerPosition() {
+		return playerPosition;
+	}
+
+
+	public void setPlayerPosition(int playerPosition) {
+		this.playerPosition = playerPosition;
 	}
 	
 	
