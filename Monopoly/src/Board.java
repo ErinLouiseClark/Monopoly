@@ -7,6 +7,7 @@ public class Board {
 	private String task;
 	private int price;
 	private String boardOwner;
+	static ArrayList board = new ArrayList();
 	
 	public Board(String n, String t, int p, String o){
 		spaceName = n;
@@ -15,8 +16,48 @@ public class Board {
 		boardOwner = o;
 	}
 	
-	public void makeBoard(){
-		ArrayList board = new ArrayList();
+	public String getSpaceName() {
+		return spaceName;
+	}
+
+	public void setSpaceName(String spaceName) {
+		this.spaceName = spaceName;
+	}
+
+	public String getTask() {
+		return task;
+	}
+
+	public void setTask(String task) {
+		this.task = task;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public String getBoardOwner() {
+		return boardOwner;
+	}
+
+	public void setBoardOwner(String boardOwner) {
+		this.boardOwner = boardOwner;
+	}
+
+	public static ArrayList getBoard() {
+		return board;
+	}
+
+	public static void setBoard(ArrayList board) {
+		Board.board = board;
+	}
+
+	public static void makeBoard(){
+		
 		board.add(new Board("GO", "Give Money", 200, "N/A"));
 		board.add(new Property("Mediterranean Avenue", "Brown", 60, 0, 30, 2, "None"));
 		board.add(new Board("Community Chest", "Draw Card", 0, "N/A"));

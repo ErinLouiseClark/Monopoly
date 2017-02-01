@@ -7,10 +7,16 @@ public class MonopolyRunner {
 	static int totalRoll;
 	static String name;
 	
-	public void main(String[] args) {
+	public static void main(String[] args) {
 		welcome();
-		
+		Board.makeBoard();
+		onePlayerMaker();
+		PlayerMove.makeMove();
 
+	}
+	
+	public static void onePlayerMaker(){
+		Player.players.add(new Player(name, 1500, 0));
 	}
 	
 	public static void welcome(){
@@ -20,7 +26,7 @@ public class MonopolyRunner {
 		System.out.println("Welcome, " + name + "!");
 		
 	}
-	public static int diceRoll(){
+	public static int rollDice(){
 		dieRoll1 = (int)(Math.random()*6)+1;
 		dieRoll2 = (int)(Math.random()*6)+1;
 		totalRoll = dieRoll1 + dieRoll2;

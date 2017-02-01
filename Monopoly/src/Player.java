@@ -40,9 +40,10 @@ public class Player {
 	}
 
 
-	public Player(String n, int m){
+	public Player(String n, int m, int p){
 		name = n;
 		money = m;
+		playerPosition = p;
 	}
 	
 	public int getPlayerPosition() {
@@ -56,17 +57,17 @@ public class Player {
 	
 	
 	public static void chooseOrder(){
-		int a = MonopolyRunner.diceRoll();
+		int a = MonopolyRunner.rollDice();
 		System.out.println("You rolled a " + a + ".");
-		int b = MonopolyRunner.diceRoll();
+		int b = MonopolyRunner.rollDice();
 		System.out.println("The computer rolled a " + ".");
 		if(a>b){
-			players.add(new Player(MonopolyRunner.name, 1500));
-			players.add(new Player("The Computer", 1500));
+			players.add(new Player(MonopolyRunner.name, 1500, 0));
+			players.add(new Player("The Computer", 1500, 0));
 		}
 		else if(b>a){
-			players.add(new Player("The Computer", 1500));
-			players.add(new Player(MonopolyRunner.name, 1500));
+			players.add(new Player("The Computer", 1500, 0));
+			players.add(new Player(MonopolyRunner.name, 1500, 0));
 		}
 		else{
 			System.out.println("Rolling again...");
