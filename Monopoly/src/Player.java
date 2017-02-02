@@ -9,6 +9,7 @@ public class Player {
 
 
 	static ArrayList<Player> players = new ArrayList<Player>();
+	static ArrayList playerOwnership = new ArrayList();
 	
 	public String getName() {
 		return name;
