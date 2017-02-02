@@ -83,11 +83,35 @@ public class PlayerMove {
 					System.out.println("That is not an option. You can no longer buy this property.");
 					makeMove();
 				}
-				
 			}
 		}
 		else{
 			System.out.println("You landed on " + (((Utility)Board.board.get(Player.players.get(0).getPlayerPosition())).getUtilityName() + "."));
+			if((((Utility)Board.board.get(Player.players.get(0).getPlayerPosition())).getUtilityName().equals("None"))){
+				System.out.println("This property costs " + (((Utility)Board.board.get(Player.players.get(0).getPlayerPosition())).getUtilityPrice()) + ".");
+				System.out.println("Would you like to buy this property? (1) Yes (2) No");
+				Scanner userInput = new Scanner(System.in);
+				int temp = userInput.nextInt();
+				if(temp == 1){
+					Player.playerOwnership.add(((Utility)Board.board.get(Player.players.get(0).getPlayerPosition())));
+					Player.players.get(0).setMoney(Player.players.get(0).getMoney()-((Utility)Board.board.get(Player.players.get(0).getPlayerPosition())).getUtilityPrice());
+					System.out.println("Your balance is now " + Player.players.get(0).getMoney());
+					System.out.println("You now own: ");
+					for(int i = 0; i < Player.playerOwnership.size(); i++){
+						System.out.println(Player.playerOwnership.get(i));
+					}
+					makeMove();
+				}
+				else if(temp == 2){
+					System.out.println("Ok.");
+					makeMove();
+				}
+				else{
+					System.out.println("That is not an option. You can no longer buy this property.");
+					makeMove();
+				}
+			
 		}
 	}
+}
 }
