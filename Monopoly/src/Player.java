@@ -57,27 +57,5 @@ public class Player {
 	}
 	
 	
-	public static void chooseOrder(){
-		int a = MonopolyRunner.rollDice();
-		System.out.println("You rolled a " + a + ".");
-		int b = MonopolyRunner.rollDice();
-		System.out.println("The computer rolled a " + ".");
-		if(a>b){
-			players.add(new Player(MonopolyRunner.name, 1500, 0));
-			players.add(new Player("The Computer", 1500, 0));
-		}
-		else if(b>a){
-			players.add(new Player("The Computer", 1500, 0));
-			players.add(new Player(MonopolyRunner.name, 1500, 0));
-		}
-		else{
-			System.out.println("Rolling again...");
-			chooseOrder();
-		}
-		
-		for(int i = 0; i < players.size(); i++){
-			System.out.println("Player " + (i+1) + " is " + players.get(i).getName());
-		}
-		
-	}
+	
 }

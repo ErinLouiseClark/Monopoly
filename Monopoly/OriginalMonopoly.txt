@@ -1,0 +1,40 @@
+GO, Give Money, 200
+Mediterranean Avenue, Brown, 60, 0, 30, 2, None
+Community Chest, Draw Card, 0
+Baltic Avenue, Brown, 60, 0, 30, 4, None
+Income Tax, Charge Money, 200
+Reading Railroad, 200, 100, 0, None
+Oriental Avenue, Light Blue, 100, 0, 50, 6, None
+Chance, Draw Card, 0
+Vermont Avenue, Light Blue, 100, 0, 50, 6, None
+Connecticut Avenue, Light Blue, 120, 0, 50, 6, None
+Jail, None, 0
+St Charles Place, Pink, 140, 0, 70, 10, None
+Electric Company, 150, 75, 0, None
+States Avenue, Pink, 140, 0, 70, 10, None
+Virginia Avenue, Pink, 160, 0, 80, 12, None
+Pennsylvania Railroad, 200, 100, 0, None
+St James Place, Orange, 180, 0, 90, 14, None
+Community Chest, Draw Card, 0
+Tennessee Avenue, Orange, 180, 0, 90, 14, None
+New York Avenue, Orange, 200, 0, 100, 16, None
+Free Parking, None, 0
+Kentucky Avenue, Red, 220, 0, 110, 18, None
+Chance, Draw Card, 0
+Indiana Avenue, Red, 220, 0, 110, 18, None
+Illinois Avenue", Red, 240, 0, 120, 20, None
+B&O Railroad, 200, 100, 0, None
+Atlantic Avenue, Yellow, 260, 0, 130, 22, None
+Ventnor Avenue, Yellow, 260, 0, 130, 22, None
+Water Works, 150, 75, 0, None
+Marvin Gardens, Yellow, 280, 0, 140, 24, None
+Go to Jail, Change position, 0
+Pacific Avenue, Green, 300, 0, 150, 26, None
+North Carolina Avenue, Green, 300, 0, 150, 26, None
+Community Chest, Draw Card, 0
+Pennsylvania Avenue, Green, 320, 0, 160, 28, None
+Short Line, 200, 100, 0, None
+Chance, Draw Card, 0
+Park Place, Blue, 350, 0, 175, 35, None
+Luxary Tax, Charge Money, 100
+Boardwalk, Blue, 400, 0, 200, 50, None

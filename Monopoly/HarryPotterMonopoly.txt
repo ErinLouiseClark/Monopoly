@@ -1,0 +1,40 @@
+GO, Give Money, 200
+Hog's Head, Brown, 60, 0, 30, 2, None
+Spells, Draw Card, 0
+The Three Broomsticks, Brown, 60, 0, 30, 4, None
+Magic of Ministry Tax, Charge Money, 200
+Hogwarts Express, 200, 100, 0, None
+Cupboard Under the Stairs: 4 Privet Drive, Light Blue, 100, 0, 50, 6, None
+Potions, Draw Card, 0
+Number 12: Grimmauld Place Light Blue, 100, 0, 50, 6, None
+The Burrow, Light Blue, 120, 0, 50, 6, None
+Azkaban, None, 0
+Weasley's Wizard Wheezes, Pink, 140, 0, 70, 10, None
+The Quibbler, 150, 75, 0, None
+Quality Quidditch Supplies, Pink, 140, 0, 70, 10, None
+Eeylops Owl Emporium, Pink, 160, 0, 80, 12, None
+Broomstick, 200, 100, 0, None
+Ollivander's Wand Shop, Orange, 180, 0, 90, 14, None
+Spells, Draw Card, 0
+Gringotts, Orange, 180, 0, 90, 14, None
+The Leaky Cauldron, Orange, 200, 0, 100, 16, None
+Free Parking, None, 0
+Improper Use of Magic Office, Red, 220, 0, 110, 18, None
+Potions, Draw Card, 0
+Auror Office, Red, 220, 0, 110, 18, None
+Misuse of Muggle Artifacts Office, Red, 240, 0, 120, 20, None
+Floo Network, 200, 100, 0, None
+Department for the Control of Magical Creatures, Yellow, 260, 0, 130, 22, None
+Department of Magical Accidents and Catastrophies, Yellow, 260, 0, 130, 22, None
+The Daily Prophet, 150, 75, 0, None
+Department of Mysteries, Yellow, 280, 0, 140, 24, None
+Go to Azkaban, Change position, 0
+Hagrid's Hut, Green, 300, 0, 150, 26, None
+Room of Requirement, Green, 300, 0, 150, 26, None
+Spells, Draw Card, 0
+Gryffindor Tower, Green, 320, 0, 160, 28, None
+Portkey, 200, 100, 0, None
+Potions, Draw Card, 0
+Quidditch Pitch, Blue, 350, 0, 175, 35, None
+Gringotts Banking Fee, Charge Money, 100
+Great Hall, Blue, 400, 0, 200, 50, None
