@@ -10,13 +10,14 @@ public class MonopolyRunner {
 	public static void main(String[] args) throws FileNotFoundException{
 		
 		welcome();
+		House.addHouses();
 		PlayerMove.makeMove();
 		//Board = 3; Property = 7; Utility = 5;
 
 	}
 	
 	public static void addPlayers(String name){
-		Player.players.add(new Player(name, 1500, 0));
+		Player.players.add(new Player(name, 1500, 0, false));
 	}
 	
 	public static void welcome() throws FileNotFoundException {

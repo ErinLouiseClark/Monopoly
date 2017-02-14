@@ -11,7 +11,9 @@ public class Board {
 	private int price;
 	static ArrayList board = new ArrayList();
 	static Scanner file;
+	static Scanner file2;
 	static String[] data;
+	static String[] cards;
 	
 	public Board(String n, String t, int p){
 		spaceName = n;
@@ -55,14 +57,17 @@ public class Board {
 		if(num == 1){
 			file = new Scanner(new File ("OriginalMonopoly.txt"));
 			PlayerMove.currency = "dollars";
+			file2 = new Scanner(new File ("MonopolyCards.txt"));
 		}
 		else if (num == 2 ){
 			file = new Scanner(new File ("HarryPotterMonopoly.txt"));
 			PlayerMove.currency = "galleons";
+			file2 = new Scanner(new File ("HarryPotterMonopolyCards.txt"));
 		}
 		while(file.hasNextLine()){
 			String temp = file.nextLine();
 			data = temp.split(", ");
+			
 			if(data.length == 3){
 				board.add(new Board(data[0], data[1], (int)Integer.parseInt(data[2])));
 			}
@@ -72,6 +77,11 @@ public class Board {
 			else{
 				board.add(new Utility(data[0], (int)Integer.parseInt(data[1]), (int)Integer.parseInt(data[2]), (int)Integer.parseInt(data[3]), data[4]));
 			}
+		}
+		while(file2.hasNextLine()){
+			String temp2 = file2.nextLine();
+			cards = temp2.split(", ");
+			Card.cardList.add(new Card(cards[0], (int)Integer.parseInt(cards[1])));
 		}
 	}
 }

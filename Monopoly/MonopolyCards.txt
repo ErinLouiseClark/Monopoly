@@ -1,0 +1,10 @@
+Advance to Go, 1
+Get Out of Jail Free, 2
+Go to Jail, 3
+Income Tax Refund, 4
+It is your birthday, 4
+Hospital Fees, 5
+School Fees, 5
+Inheritance, 4
+Bank Error, 5
+Won a Beauty Contest, 4

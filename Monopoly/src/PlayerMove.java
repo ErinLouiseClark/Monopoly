@@ -10,6 +10,7 @@ public class PlayerMove {
 	static int player = -1;
 	static int spaceOwnerNum;
 	static String spaceOwnerName;
+	static int roll;
 	
 	public static void makeMove(){
 		player++;
@@ -26,13 +27,12 @@ public class PlayerMove {
 		System.out.println("Press enter to roll the dice.");
 		Scanner userInput1 = new Scanner(System.in);
 		String blank = userInput1.nextLine();
-		int roll = MonopolyRunner.rollDice();
+		if(blank.equals("Draw Card")){
+			Card.drawCard();
+		}
+		roll = MonopolyRunner.rollDice();
 		System.out.println("You rolled " + roll + ".");
 		
-		counter++;
-		if(counter%3 == 0){
-			goToJail();
-		}
 		
 		System.out.println();
 		if(jailTime == false){
@@ -58,26 +58,7 @@ public class PlayerMove {
 			}
 		}
 		else{
-			if((Player.players.get(player).getPlayerPosition() - roll) > 0){
-				Player.players.get(player).setPlayerPosition(Player.players.get(player).getPlayerPosition() - roll);	
-				position = Board.board.get(Player.players.get(player).getPlayerPosition());
-			}
-			else if((Player.players.get(player).getPlayerPosition() - roll) < 0){
-				int temp = 0 - Player.players.get(player).getPlayerPosition();
-				int temp2 = roll + temp;
-				Player.players.get(player).setPlayerPosition((Board.board.size()) - temp2);
-				System.out.println("You passed 'Go'! Your balance has decreased by 200  " + currency + "!");
-				Player.players.get(player).setMoney(Player.players.get(player).getMoney()+200);
-				position = Board.board.get(Player.players.get(player).getPlayerPosition());
-			}
-			else{
-				Player.players.get(player).setPlayerPosition(0);
-				System.out.println("You landed on 'Go'! Your balance has decreased by 200 " + currency + "!");
-				Player.players.get(player).setMoney(Player.players.get(player).getMoney()-200);
-				System.out.println("Your balance is now " + Player.players.get(player).getMoney() + currency + ".");
-				position = Board.board.get(Player.players.get(player).getPlayerPosition());
-				makeMove();
-			}
+			Jail.jailMove();
 		}
 		findTypeOfSpace();
 	}	
@@ -104,46 +85,19 @@ public class PlayerMove {
 			else if(((Board)position).getTask().equals("Charge Money")){
 				System.out.println("You have to pay " + ((Board)position).getPrice() + " " + currency + ".");
 				if(Player.players.get(player).getMoney() < (((Board)position).getPrice())){
-					System.out.println("You do not have enough money for this.");
-					System.out.println("You are bankrupt.");
-					System.exit(0);
+					Player.players.get(player).setMoney(Player.players.get(player).getMoney()-(((Board)position).getPrice()));
+					Bankrupt.checkIfBankrupt();
 				}
 				Player.players.get(player).setMoney(Player.players.get(player).getMoney()-((Board)position).getPrice());
 				System.out.println("Your balance is now " + Player.players.get(player).getMoney()  + " " + currency +  ".");
 				makeMove();
 			}
 			else if(((Board)position).getTask().equals("Change position")){
-				goToJail();
+				Jail.goToJail();
 			}
 			else{
 				makeMove();
 			}
-		
-	}
-	
-	public static void goToJail(){
-		if(jailTime == false){
-			System.out.println("Your position has been changed.");
-			System.out.println("You paid 50 " + currency + " to get out of jail.");
-			Player.players.get(player).setMoney(Player.players.get(player).getMoney()-50);
-			System.out.println("Your balance is now " + Player.players.get(player).getMoney()  + " " + currency +  ".");
-			System.out.println("You will now move in a backwards direction.");
-			Player.players.get(player).setPlayerPosition(10);
-			position = Board.board.get(Player.players.get(player).getPlayerPosition());
-			jailTime = true;
-			makeMove();
-		}
-		else{
-			System.out.println("Your position has been changed.");
-			System.out.println("You paid 50 " + currency + " to get out of jail.");
-			Player.players.get(player).setMoney(Player.players.get(player).getMoney()-50);
-			System.out.println("Your balance is now " + Player.players.get(player).getMoney()  + " " + currency +  ".");
-			System.out.println("You will now move in a forwards direction.");
-			Player.players.get(player).setPlayerPosition(10);
-			position = Board.board.get(Player.players.get(player).getPlayerPosition());
-			jailTime = false;
-			makeMove();
-		}
 		
 	}
 	
@@ -166,12 +120,12 @@ public class PlayerMove {
 					for(int i = 0; i < Board.board.size()-1; i++){
 						if(Board.board.get(i) instanceof Property){
 							if(((Property)Board.board.get(i)).getPropertyOwner().equals(Player.players.get(player).getName())){
-								System.out.println(((Property)position).getPropertyName());
+								System.out.println(((Property)Board.board.get(i)).getPropertyName());
 							}	
 						}
 						else if(Board.board.get(i) instanceof Utility){
 							if(((Utility)Board.board.get(i)).getUtilityOwner().equals(Player.players.get(player).getName())){
-								System.out.println(((Utility)position).getUtilityName());
+								System.out.println(((Utility)Board.board.get(i)).getUtilityName());
 							}	
 						}
 					}
@@ -192,8 +146,9 @@ public class PlayerMove {
 			}
 			else{
 				System.out.println(((Property)position).getPropertyOwner() + " owns this space!");
-				System.out.println("You owe " + ((Property)position).getPropertyOwner() + " " + ((Property)position).getRent() + ".");
+				System.out.println("You owe " + ((Property)position).getPropertyOwner() + " " + ((Property)position).getRent() + " " + currency + ".");
 				Player.players.get(player).setMoney(Player.players.get(player).getMoney()-((Property)position).getRent());
+				Bankrupt.checkIfBankrupt();
 				for(int b = 0; b < Player.players.size(); b++){
 					if(Player.players.get(b).getName().equals(((Property)position).getPropertyOwner())){
 						spaceOwnerNum = b;
@@ -227,12 +182,12 @@ public class PlayerMove {
 					for(int i = 0; i < Board.board.size()-1; i++){
 						if(Board.board.get(i) instanceof Property){
 							if(((Property)Board.board.get(i)).getPropertyOwner().equals(Player.players.get(player).getName())){
-								System.out.println(((Property)position).getPropertyName());
+								System.out.println(((Property)Board.board.get(i)).getPropertyName());
 							}	
 						}
 						else if(Board.board.get(i) instanceof Utility){
 							if(((Utility)Board.board.get(i)).getUtilityOwner().equals(Player.players.get(player).getName())){
-								System.out.println((((Utility)position).getUtilityName()));
+								System.out.println(((Utility)Board.board.get(i)).getUtilityName());
 							}	
 						}
 					}
@@ -254,8 +209,9 @@ public class PlayerMove {
 			}
 			else{
 				System.out.println(((Utility)position).getUtilityOwner() + " owns this space!");
-				System.out.println("You owe " + ((Utility)position).getUtilityOwner() + " " + ((Utility)position).getUtilityRent() + ".");
+				System.out.println("You owe " + ((Utility)position).getUtilityOwner() + " " + ((Utility)position).getUtilityRent() + " " + currency + ".");
 				Player.players.get(player).setMoney(Player.players.get(player).getMoney()-((Utility)position).getUtilityRent());
+				Bankrupt.checkIfBankrupt();
 				for(int b = 0; b < Player.players.size(); b++){
 					if(Player.players.get(b).getName().equals(((Utility)position).getUtilityOwner())){
 						spaceOwnerNum = b;
