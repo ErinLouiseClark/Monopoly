@@ -5,29 +5,80 @@ public class Property {
 	private String color;
 	private int price;
 	private int houses;
-	private int mortgage;
-	private int rent;
+	private int rent; 
 	private String propertyOwner;
+	private int r1;
+	private int r2;
+	private int r3;
+	private int r4;
+	private int r5;
 	
 
-	public Property(String n, String c, int p, int h, int m, int r, String o){
+	public Property(String n, String c, int p, int h, int m, int r, String o, int r2, int r3, int r4, int r5, int r6){
 		propertyName = n;
 		color = c;
 		price = p;
 		houses = h;
-		mortgage = m;
 		rent = r;
 		propertyOwner = o;
-		
+		r1 = r2;
+		r2 = r3;
+		r3 = r4;
+		r4 = r5;
+		r5 = r6;
+			
 	}
 
-	public int getMortgage() {
-		return mortgage;
+
+	public int getR1() {
+		return r1;
 	}
 
-	public void setMortgage(int mortgage) {
-		this.mortgage = mortgage;
+
+	public void setR1(int r1) {
+		this.r1 = r1;
 	}
+
+
+	public int getR2() {
+		return r2;
+	}
+
+
+	public void setR2(int r2) {
+		this.r2 = r2;
+	}
+
+
+	public int getR3() {
+		return r3;
+	}
+
+
+	public void setR3(int r3) {
+		this.r3 = r3;
+	}
+
+
+	public int getR4() {
+		return r4;
+	}
+
+
+	public void setR4(int r4) {
+		this.r4 = r4;
+	}
+
+
+	public int getR5() {
+		return r5;
+	}
+
+
+	public void setR5(int r5) {
+		this.r5 = r5;
+	}
+
 
 	public String getPropertyName() {
 		return propertyName;

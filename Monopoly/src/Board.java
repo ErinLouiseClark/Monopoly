@@ -71,10 +71,10 @@ public class Board {
 			if(data.length == 3){
 				board.add(new Board(data[0], data[1], (int)Integer.parseInt(data[2])));
 			}
-			else if(data.length == 7){
-				board.add(new Property(data[0], data[1], (int)Integer.parseInt(data[2]),(int)Integer.parseInt(data[3]), (int)Integer.parseInt(data[4]), (int)Integer.parseInt(data[5]), data[6]));
+			else if(data.length == 12){
+				board.add(new Property(data[0], data[1], (int)Integer.parseInt(data[2]),(int)Integer.parseInt(data[3]), (int)Integer.parseInt(data[4]), (int)Integer.parseInt(data[5]), data[6], (int)Integer.parseInt(data[7]), (int)Integer.parseInt(data[8]), (int)Integer.parseInt(data[9]), (int)Integer.parseInt(data[10]), (int)Integer.parseInt(data[11])));
 			}
-			else{
+			else if(data.length == 5){
 				board.add(new Utility(data[0], (int)Integer.parseInt(data[1]), (int)Integer.parseInt(data[2]), (int)Integer.parseInt(data[3]), data[4]));
 			}
 		}

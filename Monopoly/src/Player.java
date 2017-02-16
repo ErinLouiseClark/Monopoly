@@ -7,19 +7,29 @@ public class Player {
 	private int money;
 	private int playerPosition; 
 	private boolean getOutOfJailFreeCard = false;
+	private ArrayList<Property> ownedProperties;
 
 
 	static ArrayList<Player> players = new ArrayList<Player>();
 	static ArrayList playerOwnership = new ArrayList();
 
 
-	public Player(String n, int m, int p, boolean g){
+	public Player(String n, int m, int p, boolean g, ArrayList<Property> o){
 		name = n;
 		money = m;
 		playerPosition = p;
 		getOutOfJailFreeCard = g;
+		ownedProperties = o;
 	}
 	
+	public ArrayList<Property> getOwnedProperties() {
+		return ownedProperties;
+	}
+
+	public void setOwnedProperties(ArrayList<Property> ownedProperties) {
+		this.ownedProperties = ownedProperties;
+	}
+
 	public boolean isGetOutOfJailFreeCard() {
 		return getOutOfJailFreeCard;
 	}

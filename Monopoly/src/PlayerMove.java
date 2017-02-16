@@ -30,6 +30,17 @@ public class PlayerMove {
 		if(blank.equals("Draw Card")){
 			Card.drawCard();
 		}
+		else if(blank.equals("Build House")){
+			Color.colors.get(0).setOwner(Player.players.get(PlayerMove.player).getName());
+			for(int i = 0; i < Board.board.size(); i ++){
+				if(Board.board.get(i) instanceof Property){
+					if(((Property)Board.board.get(i)).getColor().equals("Brown")){
+						Player.players.get(player).getOwnedProperties().add(((Property)Board.board.get(i)));
+					}
+				}
+			}
+			Color.checkIfMonopoly();
+		}
 		roll = MonopolyRunner.rollDice();
 		System.out.println("You rolled " + roll + ".");
 		
@@ -114,6 +125,7 @@ public class PlayerMove {
 						makeMove();
 					}
 					((Property)position).setPropertyOwner(Player.players.get(player).getName());
+					Player.players.get(player).getOwnedProperties().add(((Property)position));
 					Player.players.get(player).setMoney(Player.players.get(player).getMoney()-((Property)position).getPrice());
 					System.out.println("Your balance is now " + Player.players.get(player).getMoney() + " " + currency + ".");
 					System.out.println("You now own: ");
