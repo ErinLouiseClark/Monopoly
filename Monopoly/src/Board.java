@@ -14,6 +14,7 @@ public class Board {
 	static Scanner file2;
 	static String[] data;
 	static String[] cards;
+	static int i = 0;
 	
 	public Board(String n, String t, int p){
 		spaceName = n;
@@ -78,6 +79,7 @@ public class Board {
 				board.add(new Utility(data[0], (int)Integer.parseInt(data[1]), (int)Integer.parseInt(data[2]), (int)Integer.parseInt(data[3]), data[4]));
 			}
 		}
+		
 		while(file2.hasNextLine()){
 			String temp2 = file2.nextLine();
 			cards = temp2.split(", ");

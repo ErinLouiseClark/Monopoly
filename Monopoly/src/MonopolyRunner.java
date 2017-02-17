@@ -17,7 +17,7 @@ public class MonopolyRunner {
 	}
 	
 	public static void addPlayers(String name){
-		Player.players.add(new Player(name, 1500, 0, false, null));
+		Player.players.add(new Player(name, 1500, 0, false, new ArrayList<Property>(), false));
 	}
 	
 	public static void welcome() throws FileNotFoundException {

@@ -7,6 +7,7 @@ public class Color {
 	private String owner;
 	static String c;
 	static int p;
+	static String n;
 	
 	static ArrayList<Property> temp = new ArrayList<Property>();
 	static ArrayList<Color> colors = new ArrayList<Color>();
@@ -18,21 +19,21 @@ public class Color {
 	}
 	
 	public static void addColors(){
-		colors.add(new Color("Brown", 2, null));
-		colors.add(new Color("Light Blue", 3, null));
-		colors.add(new Color("Pink", 3, null));
-		colors.add(new Color("Orange", 3, null));
-		colors.add(new Color("Red", 3, null));
-		colors.add(new Color("Yellow", 3, null));
-		colors.add(new Color("Green", 3, null));
-		colors.add(new Color("Blue", 2, null));		
+		colors.add(new Color("Brown", 2, ""));
+		colors.add(new Color("Light Blue", 3, ""));
+		colors.add(new Color("Pink", 3, ""));
+		colors.add(new Color("Orange", 3, ""));
+		colors.add(new Color("Red", 3, ""));
+		colors.add(new Color("Yellow", 3, ""));
+		colors.add(new Color("Green", 3, ""));
+		colors.add(new Color("Blue", 2, ""));		
 	}
 	
 	public static void checkIfMonopoly(){
 		for(int i = 0; i < colors.size(); i++){
 			int counter = 0;
 			for(int j = 0; j < Player.players.get(PlayerMove.player).getOwnedProperties().size(); j++){
-				if(colors.get(i).getOwner() == null){
+				if(colors.get(i).getOwner().equals("")){
 					if(Player.players.get(PlayerMove.player).getOwnedProperties().get(j).getColor().equals(colors.get(i).getColor())){
 						counter++;
 					}
@@ -99,30 +100,42 @@ public class Color {
 			System.out.println((i+1) + " " + temp.get(i).getPropertyName());
 		}
 		Scanner userInput = new Scanner(System.in);
-		int answer = userInput.nextInt();
-		for(int i = 1; i <= temp.size(); i++){
-			if(answer == (i-1)){
+		int temp1 = userInput.nextInt();
+		int answer = temp1 - 1;
+		n = temp.get(answer).getPropertyName();
+		for(int i = 0; i < temp.size(); i++){
+			if(answer == i){
 				for(int j = 0; j < Board.board.size(); j++){
-					if((((Property)Board.board.get(j)) == temp.get(i-1))){
-						((Property)Board.board.get(j)).setHouses((((Property)Board.board.get(j)).getHouses() + 1));
-						if((((Property)Board.board.get(j)).getHouses() == 1)){
-							((Property)Board.board.get(j)).setRent((((Property)Board.board.get(j)).getR1()));
-						}
-						else if((((Property)Board.board.get(j)).getHouses() == 2)){
-							((Property)Board.board.get(j)).setRent((((Property)Board.board.get(j)).getR2()));
-						}
-						else if((((Property)Board.board.get(j)).getHouses() == 3)){
-							((Property)Board.board.get(j)).setRent((((Property)Board.board.get(j)).getR3()));
-						}
-						else if((((Property)Board.board.get(j)).getHouses() == 4)){
-							((Property)Board.board.get(j)).setRent((((Property)Board.board.get(j)).getR4()));
-						}
-						else if((((Property)Board.board.get(j)).getHouses() == 5)){
-							((Property)Board.board.get(j)).setRent((((Property)Board.board.get(j)).getR5()));
+					if(Board.board.get(j) instanceof Property){
+						if((((Property)Board.board.get(j)).getPropertyName().equals(n))){
+							((Property)Board.board.get(j)).setHouses((((Property)Board.board.get(j)).getHouses() + 1));
+							if((((Property)Board.board.get(j)).getHouses() == 1)){
+								((Property)Board.board.get(j)).setRent((((Property)Board.board.get(j)).getR1()));
+								System.out.println("The rent for this property is now " + ((Property)Board.board.get(j)).getRent() + " " + PlayerMove.currency);
+							}
+							else if((((Property)Board.board.get(j)).getHouses() == 2)){
+								((Property)Board.board.get(j)).setRent((((Property)Board.board.get(j)).getR2()));
+								System.out.println("The rent for this property is now " + ((Property)Board.board.get(j)).getRent()+ " " + PlayerMove.currency);
+							}
+							else if((((Property)Board.board.get(j)).getHouses() == 3)){
+								((Property)Board.board.get(j)).setRent((((Property)Board.board.get(j)).getR3()));
+								System.out.println("The rent for this property is now " + ((Property)Board.board.get(j)).getRent()+ " " + PlayerMove.currency);
+							}
+							else if((((Property)Board.board.get(j)).getHouses() == 4)){
+								((Property)Board.board.get(j)).setRent((((Property)Board.board.get(j)).getR4()));
+								System.out.println("The rent for this property is now " + ((Property)Board.board.get(j)).getRent()+ " " + PlayerMove.currency);
+							}
+							else if((((Property)Board.board.get(j)).getHouses() == 5)){
+								((Property)Board.board.get(j)).setRent((((Property)Board.board.get(j)).getR5()));
+								System.out.println("The rent for this property is now " + ((Property)Board.board.get(j)).getRent()+ " " + PlayerMove.currency);
 							
+							}
+							else{
+								System.out.println("There are too many houses on this property. Choose again.");
+								addHouses();
+							}
 						}
 					}
-					System.out.println("The rent for this property is now " + ((Property)Board.board.get(j)).getRent());
 				}
 			}
 		}

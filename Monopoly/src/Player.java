@@ -8,20 +8,30 @@ public class Player {
 	private int playerPosition; 
 	private boolean getOutOfJailFreeCard = false;
 	private ArrayList<Property> ownedProperties;
+	private boolean jailTime = false;
 
 
 	static ArrayList<Player> players = new ArrayList<Player>();
 	static ArrayList playerOwnership = new ArrayList();
 
 
-	public Player(String n, int m, int p, boolean g, ArrayList<Property> o){
+	public Player(String n, int m, int p, boolean g, ArrayList<Property> o, boolean j){
 		name = n;
 		money = m;
 		playerPosition = p;
 		getOutOfJailFreeCard = g;
 		ownedProperties = o;
+		jailTime = j;
 	}
 	
+	public boolean isJailTime() {
+		return jailTime;
+	}
+
+	public void setJailTime(boolean jailTime) {
+		this.jailTime = jailTime;
+	}
+
 	public ArrayList<Property> getOwnedProperties() {
 		return ownedProperties;
 	}

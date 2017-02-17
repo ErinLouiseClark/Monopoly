@@ -1,40 +1,40 @@
 GO, Give Money, 200
-Hog's Head, Brown, 60, 0, 30, 2, None
+Hog's Head, Brown, 60, 0, 30, 2, None, 10, 30, 90, 160, 250
 Spells, Draw Card, 0
-The Three Broomsticks, Brown, 60, 0, 30, 4, None
+The Three Broomsticks, Brown, 60, 0, 30, 4, None, 20, 60, 180, 320, 450
 Magic of Ministry Tax, Charge Money, 200
 Hogwarts Express, 200, 100, 0, None
-Cupboard Under the Stairs: 4 Privet Drive, Light Blue, 100, 0, 50, 6, None
+Cupboard Under the Stairs: 4 Privet Drive, Light Blue, 100, 0, 50, 6, None, 30, 90, 270, 400, 550
 Potions, Draw Card, 0
-Number 12: Grimmauld Place Light Blue, 100, 0, 50, 6, None
-The Burrow, Light Blue, 120, 0, 50, 6, None
+Number 12: Grimmauld Place Light Blue, 100, 0, 50, 6, None, 30, 90, 270, 400, 550
+The Burrow, Light Blue, 120, 0, 50, 6, None, 40, 100, 300, 450, 600
 Azkaban, None, 0
-Weasley's Wizard Wheezes, Pink, 140, 0, 70, 10, None
+Weasley's Wizard Wheezes, Pink, 140, 0, 70, 10, None, 50, 150, 450, 625, 750
 The Quibbler, 150, 75, 0, None
-Quality Quidditch Supplies, Pink, 140, 0, 70, 10, None
-Eeylops Owl Emporium, Pink, 160, 0, 80, 12, None
+Quality Quidditch Supplies, Pink, 140, 0, 70, 10, None, 50, 150, 450, 625, 750
+Eeylops Owl Emporium, Pink, 160, 0, 80, 12, None, 60, 180, 500, 700, 900
 Broomstick, 200, 100, 0, None
-Ollivander's Wand Shop, Orange, 180, 0, 90, 14, None
+Ollivander's Wand Shop, Orange, 180, 0, 90, 14, None, 70, 200, 550, 750, 950
 Spells, Draw Card, 0
-Gringotts, Orange, 180, 0, 90, 14, None
-The Leaky Cauldron, Orange, 200, 0, 100, 16, None
+Gringotts, Orange, 180, 0, 90, 14, None, 70, 200, 550, 750, 950
+The Leaky Cauldron, Orange, 200, 0, 100, 16, None, 80, 220, 600, 800, 1000
 Free Parking, None, 0
-Improper Use of Magic Office, Red, 220, 0, 110, 18, None
+Improper Use of Magic Office, Red, 220, 0, 110, 18, None, 90, 250, 700, 875, 1050
 Potions, Draw Card, 0
-Auror Office, Red, 220, 0, 110, 18, None
-Misuse of Muggle Artifacts Office, Red, 240, 0, 120, 20, None
+Auror Office, Red, 220, 0, 110, 18, None, 90, 250, 700, 875, 1050
+Misuse of Muggle Artifacts Office, Red, 240, 0, 120, 20, None, 100, 300, 750, 925 1100
 Floo Network, 200, 100, 0, None
-Department for the Control of Magical Creatures, Yellow, 260, 0, 130, 22, None
-Department of Magical Accidents and Catastrophies, Yellow, 260, 0, 130, 22, None
+Department for the Control of Magical Creatures, Yellow, 260, 0, 130, 22, None, 110, 330, 800, 975, 1150
+Department of Magical Accidents and Catastrophies, Yellow, 260, 0, 130, 22, None, 110, 330, 800, 975, 1150
 The Daily Prophet, 150, 75, 0, None
-Department of Mysteries, Yellow, 280, 0, 140, 24, None
+Department of Mysteries, Yellow, 280, 0, 140, 24, None, 120, 360, 850, 1025, 1200
 Go to Azkaban, Change position, 0
-Hagrid's Hut, Green, 300, 0, 150, 26, None
-Room of Requirement, Green, 300, 0, 150, 26, None
+Hagrid's Hut, Green, 300, 0, 150, 26, None, 130, 390, 900, 1100, 1275
+Room of Requirement, Green, 300, 0, 150, 26, None, 130, 390, 900, 1100, 1275
 Spells, Draw Card, 0
-Gryffindor Tower, Green, 320, 0, 160, 28, None
+Gryffindor Tower, Green, 320, 0, 160, 28, None, 150, 450, 1000, 1200, 1400
 Portkey, 200, 100, 0, None
 Potions, Draw Card, 0
-Quidditch Pitch, Blue, 350, 0, 175, 35, None
+Quidditch Pitch, Blue, 350, 0, 175, 35, None, 175, 500, 1100, 1300, 1500
 Gringotts Banking Fee, Charge Money, 100
-Great Hall, Blue, 400, 0, 200, 50, None
+Great Hall, Blue, 400, 0, 200, 50, None, 200, 600, 1400, 1700, 2000

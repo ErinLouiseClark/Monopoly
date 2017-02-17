@@ -28,7 +28,7 @@ public class Jail {
 	}
 	
 	public static void goToJail(){
-		if(PlayerMove.jailTime == false){
+		if(Player.players.get(PlayerMove.player).isJailTime() == false){
 			if(Player.players.get(PlayerMove.player).isGetOutOfJailFreeCard() == true){
 				System.out.println("You have a 'Get Out of Jail Free' card. Would you like to use it? (1) Yes (2) No ");
 				Scanner userInput = new Scanner(System.in);
@@ -49,7 +49,7 @@ public class Jail {
 			System.out.println("You will now move in a backwards direction.");
 			Player.players.get(PlayerMove.player).setPlayerPosition(10);
 			PlayerMove.position = Board.board.get(Player.players.get(PlayerMove.player).getPlayerPosition());
-			PlayerMove.jailTime = true;
+			Player.players.get(PlayerMove.player).setJailTime(true); 
 			PlayerMove.makeMove();
 		}
 		else{
@@ -73,7 +73,7 @@ public class Jail {
 			System.out.println("You will now move in a forwards direction.");
 			Player.players.get(PlayerMove.player).setPlayerPosition(10);
 			PlayerMove.position = Board.board.get(Player.players.get(PlayerMove.player).getPlayerPosition());
-			PlayerMove.jailTime = false;
+			Player.players.get(PlayerMove.player).setJailTime(false);
 			PlayerMove.makeMove();
 		}
 		

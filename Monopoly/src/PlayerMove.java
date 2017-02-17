@@ -3,8 +3,7 @@ import java.io.*;
 
 public class PlayerMove {
 		
-	static Object position; 
-	static boolean jailTime = false;	
+	static Object position; 	
 	static String currency;
 	static int counter = 0;
 	static int player = -1;
@@ -24,15 +23,17 @@ public class PlayerMove {
 		
 		position = Board.board.get(Player.players.get(player).getPlayerPosition());
 		System.out.println();
+		
 		System.out.println("Press enter to roll the dice.");
 		Scanner userInput1 = new Scanner(System.in);
 		String blank = userInput1.nextLine();
 		if(blank.equals("Draw Card")){
 			Card.drawCard();
 		}
+		
 		else if(blank.equals("Build House")){
-			Color.colors.get(0).setOwner(Player.players.get(PlayerMove.player).getName());
-			for(int i = 0; i < Board.board.size(); i ++){
+			for(int i = 0; i < Board.board.size(); i++){
+				
 				if(Board.board.get(i) instanceof Property){
 					if(((Property)Board.board.get(i)).getColor().equals("Brown")){
 						Player.players.get(player).getOwnedProperties().add(((Property)Board.board.get(i)));
@@ -46,7 +47,7 @@ public class PlayerMove {
 		
 		
 		System.out.println();
-		if(jailTime == false){
+		if(Player.players.get(player).isJailTime() == false){
 			if((Player.players.get(player).getPlayerPosition() + roll) < Board.board.size()){
 				Player.players.get(player).setPlayerPosition(Player.players.get(player).getPlayerPosition() + roll);	
 				position = Board.board.get(Player.players.get(player).getPlayerPosition());
@@ -63,7 +64,7 @@ public class PlayerMove {
 				Player.players.get(player).setPlayerPosition(0);
 				System.out.println("You landed on 'Go'! Your balance has increased by 200 " + currency + "!");
 				Player.players.get(player).setMoney(Player.players.get(player).getMoney()+200);
-				System.out.println("Your balance is now " + Player.players.get(player).getMoney() + currency + ".");
+				System.out.println("Your balance is now " + Player.players.get(player).getMoney() + " " + currency + ".");
 				position = Board.board.get(Player.players.get(player).getPlayerPosition());
 				makeMove();
 			}
@@ -170,6 +171,7 @@ public class PlayerMove {
 				Player.players.get(spaceOwnerNum).setMoney(Player.players.get(spaceOwnerNum).getMoney()+((Property)position).getRent());
 				System.out.println("Your balance is now " + Player.players.get(player).getMoney() + " " + currency + ".");
 				System.out.println(spaceOwnerName + "'s balance is now " + Player.players.get(spaceOwnerNum).getMoney() + " " + currency + ".");
+				makeMove();
 				
 			}
 	}
