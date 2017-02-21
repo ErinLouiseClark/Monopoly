@@ -22,7 +22,7 @@ public class Card {
 			Player.players.get(PlayerMove.player).setPlayerPosition(0);
 			System.out.println("You landed on 'Go'! Your balance has increased by 200 " + PlayerMove.currency + "!");
 			Player.players.get(PlayerMove.player).setMoney(Player.players.get(PlayerMove.player).getMoney()+200);
-			System.out.println("Your balance is now " + Player.players.get(PlayerMove.player).getMoney() + PlayerMove.currency + ".");
+			System.out.println("Your balance is now " + Player.players.get(PlayerMove.player).getMoney() + " " + PlayerMove.currency + ".");
 			PlayerMove.position = Board.board.get(Player.players.get(PlayerMove.player).getPlayerPosition());
 			PlayerMove.makeMove();
 		}
