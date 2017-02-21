@@ -130,7 +130,7 @@ public class PlayerMove {
 					Player.players.get(player).setMoney(Player.players.get(player).getMoney()-((Property)position).getPrice());
 					System.out.println("Your balance is now " + Player.players.get(player).getMoney() + " " + currency + ".");
 					System.out.println("You now own: ");
-					for(int i = 0; i < Board.board.size()-1; i++){
+					for(int i = 0; i < Board.board.size(); i++){
 						if(Board.board.get(i) instanceof Property){
 							if(((Property)Board.board.get(i)).getPropertyOwner().equals(Player.players.get(player).getName())){
 								System.out.println(((Property)Board.board.get(i)).getPropertyName());
@@ -193,7 +193,7 @@ public class PlayerMove {
 					Player.players.get(player).setMoney(Player.players.get(player).getMoney()-((Utility)position).getUtilityPrice());
 					System.out.println("Your balance is now " + Player.players.get(player).getMoney() + " " + currency + ".");
 					System.out.println("You now own: ");
-					for(int i = 0; i < Board.board.size()-1; i++){
+					for(int i = 0; i < Board.board.size(); i++){
 						if(Board.board.get(i) instanceof Property){
 							if(((Property)Board.board.get(i)).getPropertyOwner().equals(Player.players.get(player).getName())){
 								System.out.println(((Property)Board.board.get(i)).getPropertyName());
